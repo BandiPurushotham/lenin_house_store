@@ -1,11 +1,8 @@
 "use client";
 
-import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-
-function SuccessContent() {
+export default function OrderSuccessContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
@@ -29,13 +26,5 @@ function SuccessContent() {
 
       </div>
     </main>
-  );
-}
-
-export default function OrderSuccessPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <SuccessContent />
-    </Suspense>
   );
 }
