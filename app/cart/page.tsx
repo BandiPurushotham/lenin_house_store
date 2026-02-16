@@ -99,7 +99,7 @@ export default function CartPage() {
                     className="w-40 h-40 object-cover rounded-lg"
                   />
 
-                  <div className="flex-1 flex flex-col justify-between">
+                  <div className="flex-1 flex flex-col md:flex-row justify-between">
                     <div>
                       <h2 className="text-xl font-medium">
                         {item.products.name}
