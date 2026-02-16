@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-neutral-100 border-b border-neutral-200 px-8 py-5">
+    <header className="bg-neutral-100 border-b border-neutral-200 px-4 sm:px-8 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
 
         {/* Brand */}

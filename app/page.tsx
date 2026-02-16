@@ -121,8 +121,9 @@ if (activeCategory !== "all") {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-100 text-neutral-900 px-6 py-12">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-neutral-100 text-neutral-900 px-2 sm:px-6 py-8 sm:py-10">
+
+      <div className="w-full max-w-7xl mx-auto">
 
         {/* Hero */}
         <section className="text-center mb-16">
@@ -157,25 +158,25 @@ if (activeCategory !== "all") {
         </section>
 
         {/* Product Grid */}
-        <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1.5 sm:gap-3">
 
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300"
+              className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col h-full"
             >
+
               
               <div className="overflow-hidden">
                 <img
-  src={product.image_url}
-  alt={product.name}
-  onClick={() => router.push(`/product/${product.id}`)}
-  className="w-full h-64 object-cover group-hover:scale-105 transition duration-500 cursor-pointer"
-/>
-
+                  src={product.image_url}
+                  alt={product.name}
+                  onClick={() => router.push(`/product/${product.id}`)}
+                  className="w-full aspect-square object-cover group-hover:scale-105 transition duration-500 cursor-pointer"
+                />
               </div>
 
-                <div className="p-4 sm:p-5">
+                <div className="p-4 sm:p-5 flex flex-col flex-1">
 
                 <h3 className="text-lg font-medium mb-2">
                   {product.name}
@@ -185,7 +186,8 @@ if (activeCategory !== "all") {
                   {product.description}
                 </p>
 
-                <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
+
                   <span className="text-lg font-semibold">
                     ₹{product.price}
                   </span>
