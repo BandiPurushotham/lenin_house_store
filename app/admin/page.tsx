@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 
+
 export default function AdminPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -36,10 +37,8 @@ export default function AdminPage() {
       const { data:ordersData } = await supabase
         .from("orders")
         .select(`
-          *,
-          profiles (
-            email
-          )
+          *
+        )
         `)
         .order("created_at", { ascending: false });
 

@@ -12,20 +12,28 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
 
   const handleSignup = async () => {
-    const { error } = await supabase.auth.signUp({
+    const { data,error } = await supabase.auth.signUp({
       email,
       password,
     });
-
+    
     if (error) {
       alert(error.message);
       return;
     }
+    if (data?.user) {
+    await supabase.from("profiles").insert({
+      id: data.user.id,
+      role: "user",
+      email: data.user.email
+    });
+  }
+
 
     alert("Account created successfully");
     router.push("/");
   };
-
+  
   return (
     <main className="min-h-screen bg-neutral-100 flex items-center justify-center px-6">
       <div className="bg-white p-10 rounded-xl shadow-sm w-full max-w-md">
