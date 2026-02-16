@@ -33,10 +33,16 @@ export default function AdminPage() {
       }
 
       // Fetch all orders
-      const { data: ordersData } = await supabase
+      const { data:ordersData } = await supabase
         .from("orders")
-        .select("*")
+        .select(`
+          *,
+          profiles (
+            email
+          )
+        `)
         .order("created_at", { ascending: false });
+
 
       setOrders(ordersData || []);
       setLoading(false);

@@ -126,7 +126,8 @@ if (activeCategory !== "all") {
 
         {/* Hero */}
         <section className="text-center mb-16">
-          <h1 className="text-5xl font-light tracking-[0.2em] uppercase">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-[0.2em] uppercase text-center">
+
             The Lenin House
           </h1>
           <p className="mt-4 text-neutral-500">
@@ -156,7 +157,8 @@ if (activeCategory !== "all") {
         </section>
 
         {/* Product Grid */}
-        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+
           {filteredProducts.map((product) => (
             <div
               key={product.id}
@@ -173,7 +175,8 @@ if (activeCategory !== "all") {
 
               </div>
 
-              <div className="p-5">
+                <div className="p-4 sm:p-5">
+
                 <h3 className="text-lg font-medium mb-2">
                   {product.name}
                 </h3>
